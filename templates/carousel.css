@@ -1,10 +1,9 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
+
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /*for setting all div sizes same*/
 }
 
+/*table*/
 .columns {
   float: left;
   width: 33.3%;
@@ -57,6 +56,8 @@
   }
 }
 
+/*other elements*/
+
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -64,17 +65,14 @@ body {
 }
 
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
 
-/* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
-  z-index: 10;
+  z-index: 10; /*for the text to overlap over the image*/
 }
 
 /* Declare heights because of positioning of img element */
@@ -90,8 +88,7 @@ body {
 }
 
 
-/* MARKETING CONTENT
--------------------------------------------------- */
+
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
@@ -106,11 +103,6 @@ body {
   margin-right: .75rem;
   margin-left: .75rem;
 }
-/* rtl:end:ignore */
-
-
-/* Featurettes
-------------------------- */
 
 .featurette-divider {
   margin: 5rem 0; /* Space out the Bootstrap <hr> more */
@@ -125,8 +117,6 @@ body {
 }
 
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */
