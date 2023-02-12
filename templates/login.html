@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Signup/Signin</title>
+    <link rel="icon" href="/images/android-chrome-512x512.png" type="image/icon type">  
+    <link rel="stylesheet" href="login.css">
+  </head>
+
+
+<body class="img" >
+    
+<div class="container right-panel-active">
+	<!-- Sign Up -->
+	<div class="container__form container--signup">
+		<form name="myForm1" action="#" class="form" id="form1" onsubmit="return validateForm1()">
+			<h2 class="form__title">Sign Up</h2>
+			<input type="text" name="uname" placeholder="User" class="input" />
+			<input type="email" name="ename1" placeholder="Email" class="input" />
+			<input type="password" name="pname1" placeholder="Password" class="input" />
+			<button class="btn" type="submit">Sign Up</button>
+		</form>
+	</div>
+
+	<!-- Sign In -->
+	<div class="container__form container--signin">
+		<form name="myForm" action="#" class="form" id="form2" onsubmit="return validateForm()">
+			<h2 class="form__title">Sign In</h2>
+			<input type="email" name="ename" placeholder="Email" class="input" />
+			<input type="password" name="pname" placeholder="Password" class="input" />
+			<a href="#" class="link">Forgot your password?</a>
+			<input class="btn" type="submit" value="SIGN IN">
+		</form>
+	</div>
+
+	<!-- Overlay -->
+	<div class="container__overlay">
+		<div class="overlay">
+			<div class="overlay__panel overlay--left">
+				<button class="btn" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay__panel overlay--right">
+				<button class="btn" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+    const signInBtn = document.getElementById("signIn");
+    const signUpBtn = document.getElementById("signUp");
+    const fistForm = document.getElementById("form1");
+    const secondForm = document.getElementById("form2");
+    const container = document.querySelector(".container");
+    
+    signInBtn.addEventListener("click", () => {
+        container.classList.remove("right-panel-active");
+    });
+    
+    signUpBtn.addEventListener("click", () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    fistForm.addEventListener("submit", (e) => e.preventDefault());
+    secondForm.addEventListener("submit", (e) => e.preventDefault());
+    
+    function validateForm() {
+  let x = document.forms["myForm"]["ename"].value;
+  let y = document.forms["myForm"]["pname"].value;
+  
+  if (x == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  else if (y == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+}
+
+function validateForm1() {
+  let a = document.forms["myForm1"]["uname"].value;
+  let b = document.forms["myForm1"]["pname1"].value;
+  let c = document.forms["myForm1"]["ename1"].value;
+  
+  if (a == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  else if (c == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  else if (b == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+}
+
+</script>
+
+</body>
+</html>

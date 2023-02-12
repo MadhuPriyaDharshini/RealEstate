@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset = "UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="android-chrome-512x512.png" type="image/icon type" >
+    <script src="/profile.js" >
+    
+    </script>
+
+</head>
+<body>
+    <!DOCTYPE html>
+
+<body style="background-image: url(/Components/blackmaskdubai.jpeg);">
+    
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div style="margin-left:25%;padding:1px 16px;height:1000px;" >
+      <h2 style="text-align:center;color:white;">Complete your profile to get more personalized reccommendations</h2>
+      
+      <!--form-->
+      <form action="#" method="post"  name="form"  >      
+        <div class="card" style="background-color:white">
+        <img src="./Components/profile.jpeg" alt="Avatar" style="width: 100px;height:100px;border-radius: 50%;">
+        <div class="container">
+          <h4><b>My Details</b></h4>
+          <div class="info">
+            <!--Details-->
+            <input class="fname" type="text" name="Name" id="Name" placeholder="Full name" required>
+
+            <input type="email" name="Email" id ="Email" required placeholder="Email">
+
+            <input type="text" name="Phone" required placeholder="Phone number">
+
+            <input type="date" name="DOB" required placeholder="Date of Birth">
+            <!--Checkbox-->
+            <div class="radio">
+              <label>Gender</label>
+              <input type="radio" id="Male" name="Male" value="male"/> Male  
+              <input type="radio" id="Female" name="Femaler" value="female"/> Female <br/> 
+            </div>
+            <!--Password-->
+
+            <input type="password" name="password" required placeholder="Password">
+            <!--address-->
+            <label style="text-align: left;">Address</label>
+            <textarea placeholder='Address'> </textarea>
+            <!--dropdown-->
+            <select>
+              <option value="visit-type" selected>What are you looking for?</option>
+              <option value="rent-house">Rent a Property</option>
+              <option value="sell-house">Sell a Property</option>
+              <option value="buy-house">Buy a Property</option>
+              <option value="buy-plot">Buy a Plot/Land</option>
+              <option value="PG-coliving">PG/Coliving</option>
+              <option value="Commerical-Space">Commerical Space</option>
+            </select>
+          </div>
+          <!--checkbox-->
+          <div class="checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox" required><span>I agree to the <a href="https://realty.economictimes.indiatimes.com/terms_conditions.php">Privacy Policy of Real Traders.</a></span>
+          </div>
+          <button id="submit" type="submit"  href="#">Save Changes</button>
+        </div>
+        </div>
+        </form>
+      </div>
+    
+      <script type="text/javascript" >
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click",validate);
+
+        function validate(e)
+        {
+          e.preventDefault();
+          const name1 = document.getElementById("Name");
+          let valid = true;
+
+          if(!name1.value)
+          {
+            const err = document.getEle
+          }
+        }
+
+
+
+
+
+
+         /*  function  () {
+  let x = document.forms[  "form1"]["name"].value;
+  console.log(x);
+  let y = document.forms["form1"]["Phone"].value;
+  
+  if (x == "") {
+    alert("OOPS!!You've forgot to fill your name");
+    return false;
+  }
+  else if (y == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+}*/
+      </script>
+    </body>
+    </html>

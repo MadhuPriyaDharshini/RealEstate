@@ -12,7 +12,8 @@
           "-webkit-tap-highlight-color",
           "scroll-behavior",
           "text-decoration-skip-ink",
-          "-webkit-overflow-scrolling"
+          "-webkit-overflow-scrolling",
+          "overflow-anchor"
         ]
       }
     ],
@@ -22,6 +23,7 @@
         "image-alt": "off"
       }
     ],
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "meta-viewport": "off"
   }
 }
