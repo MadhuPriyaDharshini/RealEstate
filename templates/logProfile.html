@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="logProfile.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="android-chrome-512x512.png" type="image/icon type">
-  <script src="/profile.js">
+  <script src="logProfile.js">
 
   </script>
 
 </head>
 
 
-<body style="background-image: url(/Components/blackmaskdubai.jpeg);">
+<body style="background-image: url(/images/blackmaskdubai.jpeg);">
 
   <ul>
     <li><a class="active" href="#home">Home</a></li>
@@ -26,9 +26,9 @@
     <h2 style="text-align:center;color:white;">Complete your profile to get more personalized reccommendations</h2>
 
     <!--form-->
-    <form action="#" method="post" name="form">
+    <form action="#" method="post" name="form" id="formElement">
       <div class="card" style="background-color:white">
-        <img src="./Components/profile.jpeg" alt="Avatar" style="width: 100px;height:100px;border-radius: 50%;">
+        <img src="/images/profile.jpeg" alt="Avatar" style="width: 100px;height:100px;border-radius: 50%;">
         <div class="container">
           <h4><b>My Details</b></h4>
           <div class="info">
@@ -69,25 +69,25 @@
                 href="https://realty.economictimes.indiatimes.com/terms_conditions.php">Privacy Policy of Real
                 Traders.</a></span>
           </div>
-          <button id="submit" type="submit" href="#">Save Changes</button>
+          <button id="submitButton" type="submit" href="#" onclick="validateForm()">Save Changes</button>
         </div>
       </div>
     </form>
   </div>
 
   <script type="text/javascript">
-    const submit = document.getElementById("submit");
-    submit.addEventListener("click", validate);
+    // const submit = document.getElementById("submit");
+    // submit.addEventListener("click", validate);
 
-    function validate(e) {
-      e.preventDefault();
-      const name1 = document.getElementById("Name");
-      let valid = true;
+    // function validate(e) {
+    //   e.preventDefault();
+    //   const name1 = document.getElementById("Name");
+    //   let valid = true;
 
-      if (!name1.value) {
-        const err = document.getEle
-      }
-    }
+    //   if (!name1.value) {
+    //     const err = document.getEle
+    //   }
+    // }
 
   </script>
 </body>
