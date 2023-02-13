@@ -4,10 +4,13 @@
 <head>
     <meta charset = "UTF-8">
     <title>My Profile</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="/templates/logProfile.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="icon" href="/images/android-chrome-512x512.png" type="image/icon type">  
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="android-chrome-512x512.png" type="image/icon type" >
-    <script src="/profile.js" >
+    <script src="/templates/logProfile.js" >
     
     </script>
 
@@ -16,31 +19,41 @@
     <!DOCTYPE html>
 
 <body style="background-image: url(/Components/blackmaskdubai.jpeg);">
+ 
     
     <ul>
-      <li><a class="active" href="#home">Home</a></li>
+      <li><a class="active" href="/templates/index.html">Home</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#about">About</a></li>
     </ul>
     <div style="margin-left:25%;padding:1px 16px;height:1000px;" >
       <h2 style="text-align:center;color:white;">Complete your profile to get more personalized reccommendations</h2>
-      
+  
       <!--form-->
-      <form action="#" method="post"  name="form"  >      
-        <div class="card" style="background-color:white">
+      <form action="#" method="post"  name="form" >      
+        <div class="card" style="background-color:white" id="myForm1">
         <img src="./Components/profile.jpeg" alt="Avatar" style="width: 100px;height:100px;border-radius: 50%;">
         <div class="container">
           <h4><b>My Details</b></h4>
           <div class="info">
             <!--Details-->
-            <input class="fname" type="text" name="Name" id="Name" placeholder="Full name" required>
+            <div class="input-group">
+            <input class="fname" type="text" name="Name" id="Name" placeholder="Full name" onkeyup="validateName()" required>
+            <span id="name-error"></span>
 
-            <input type="email" name="Email" id ="Email" required placeholder="Email">
+            </div>
+            <div class="input-group">
+            <input type="email" name="Email" id ="Email" required placeholder="Email" onkeyup="validateEmail()">
+            <span id="email-error"></span>
 
-            <input type="text" name="Phone" required placeholder="Phone number">
+          </div>
+            <div class="input-group">
+            <input type="text" name="Phone" id="Phone" required placeholder="Phone number" onkeyup="validatePhone">
+            <span id="phone-error"></span>
 
-            <input type="date" name="DOB" required placeholder="Date of Birth">
+          </div>
+            <input type="date" name="DOB" required placeholder="Date of Birth" id="date1">
             <!--Checkbox-->
             <div class="radio">
               <label>Gender</label>
@@ -49,7 +62,7 @@
             </div>
             <!--Password-->
 
-            <input type="password" name="password" required placeholder="Password">
+            <input type="password" name="password" required placeholder="Password" id="Password">
             <!--address-->
             <label style="text-align: left;">Address</label>
             <textarea placeholder='Address'> </textarea>
@@ -68,17 +81,40 @@
           <div class="checkbox">
             <input type="checkbox" name="checkbox" id="checkbox" required><span>I agree to the <a href="https://realty.economictimes.indiatimes.com/terms_conditions.php">Privacy Policy of Real Traders.</a></span>
           </div>
-          <button id="submit" type="submit"  href="#">Save Changes</button>
+          <button id="submit" type="submit"  href="#" onclick="return validateForm()">Save Changes</button>
+          <span id="submit-error"></span>
         </div>
         </div>
         </form>
       </div>
     
       <script type="text/javascript" >
-        const submit = document.getElementById("submit");
-        submit.addEventListener("click",validate);
+        
+        window.addEventListener('beforeunload',function(e)
+        {
+          e.preventDefault();
+          e.returnValue='';
+        });
 
-        function validate(e)
+        const form = document.getElementById('myForm1');
+        form.addEventListener('mouseover',function handlemouseover()
+        {
+          form.style.backgroundColor='#9582c5'
+        });
+
+        form.addEventListener('mouseout',function handlemouseout(){
+          form.style.backgroundColor='white'
+        })
+
+
+
+        /*const submit = document.getElementById("submit");
+        submit.addEventListener("click",validateForm());*/
+        const nameErr=document.getElementById('name-error');
+        const emailErr=document.getElementById('email-error');
+        const phoneErr=document.getElementById('phone-error');
+        const submitErr= document.getElementById('submit-error');
+        function validateName(e)
         {
           e.preventDefault();
           const name1 = document.getElementById("Name");
@@ -86,9 +122,68 @@
 
           if(!name1.value)
           {
-            const err = document.getEle
+            const err = document.getElementById("Name");
           }
         }
+
+        function validatePhone(){
+          const phone = document.getElementById('Phone').value;
+          if(phone.length==0)
+          {
+            phoneErr.innerHTML ='Phone number required';
+            return false;
+          }
+          if(phone.length!=0)
+          {
+            phoneErr.innerHTML='Phone number should have 10 digits';
+            return false;
+          }
+          if(!phone.match(/^[0-9]{10}$/))
+          {
+            phoneErr.innerHTML='Digits only allowed';
+            return false;
+          }
+          phoneErr.innerHTML='';
+          return true;
+        }
+
+        function validateEmail(){
+          const email = document.getElementById('Email').value;
+          if(email.length==0)
+          {
+            emailErr.innerHTML='Email is required';
+            return false;
+          }
+          if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
+          {
+            emailError.innerHTML='Email Invalid';
+            return false;
+         }
+        emailError.innerHTML='';
+        return true;
+        }
+
+        function validateForm()
+        {
+          const a= true;
+          const username=document.getElementById('Name').value;
+          const password = document.getElementById('Password').value;
+          if(!validateEmail()||!validateName()||!validatePhone())
+          {
+            submitErr.style.display ='block';
+            setTimeout(function(){
+              submitErr.style.display='none';},3000);
+              submitErr.innerHTML='Please Fill the form';
+              a=false;
+              alert("Invalid username or password");
+
+            }
+            else if(username=="realestate"&&password=="password"){
+              window.open("home.html");
+            }
+          }
+        
+
 
 
 

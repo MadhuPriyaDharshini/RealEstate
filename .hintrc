@@ -13,7 +13,8 @@
           "scroll-behavior",
           "text-decoration-skip-ink",
           "-webkit-overflow-scrolling",
-          "overflow-anchor"
+          "overflow-anchor",
+          "width: fit-content"
         ]
       }
     ],

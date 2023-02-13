@@ -57,11 +57,14 @@ footer{
   background-color: grey;
   color:rgb(248, 246, 246);
   text-align: center;
-  
+  flex-grow: 0;
+    flex-shrink: 0;
   bottom:0;
   width:100%;
   position:relative;
   margin:0;
+  padding:0;
+  height:100%;
 
   
 }
