@@ -23,6 +23,7 @@ document.getElementById("date1").addEventListener("change", function () {
 });
 
 document.getElementById("password").addEventListener("input", function () {});
+
 const form = document.getElementById("formElement");
 const submit = document.getElementById("submitButton");
 
