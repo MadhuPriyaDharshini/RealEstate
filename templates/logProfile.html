@@ -15,8 +15,7 @@
     </script>
 
 </head>
-<body>
-    <!DOCTYPE html>
+
 
 <body style="background-image: url(/Components/blackmaskdubai.jpeg);">
  
@@ -44,7 +43,7 @@
 
             </div>
             <div class="input-group">
-            <input type="email" name="Email" id ="Email" required placeholder="Email" onkeyup="validateEmail()">
+            <input type="email" name="Email" id="Email" required placeholder="Email" onkeyup="validateEmail()">
             <span id="email-error"></span>
 
           </div>
@@ -57,8 +56,8 @@
             <!--Checkbox-->
             <div class="radio">
               <label>Gender</label>
-              <input type="radio" id="Male" name="Male" value="male"/> Male  
-              <input type="radio" id="Female" name="Femaler" value="female"/> Female <br/> 
+              <input type="radio" id="Male" name="Male" value="male" /> Male
+              <input type="radio" id="Female" name="Femaler" value="female" /> Female <br />
             </div>
             <!--Password-->
 
@@ -79,9 +78,11 @@
           </div>
           <!--checkbox-->
           <div class="checkbox">
-            <input type="checkbox" name="checkbox" id="checkbox" required><span>I agree to the <a href="https://realty.economictimes.indiatimes.com/terms_conditions.php">Privacy Policy of Real Traders.</a></span>
+            <input type="checkbox" name="checkbox" id="checkbox" required><span>I agree to the <a
+                href="https://realty.economictimes.indiatimes.com/terms_conditions.php">Privacy Policy of Real
+                Traders.</a></span>
           </div>
-          <button id="submit" type="submit"  href="#" onclick="return validateForm()">Save Changes</button>
+          <button id="submit" type="submit" href="#" onclick="return validateForm()">Save Changes</button>
           <span id="submit-error"></span>
         </div>
         </div>
@@ -120,11 +121,10 @@
           const name1 = document.getElementById("Name");
           let valid = true;
 
-          if(!name1.value)
-          {
-            const err = document.getElementById("Name");
-          }
-        }
+      if (!name1.value) {
+        const err = document.getElementById("Name");
+      }
+    }
 
         function validatePhone(){
           const phone = document.getElementById('Phone').value;
@@ -185,6 +185,7 @@
         
 
 
-      </script>
-    </body>
-    </html>
+  </script>
+</body>
+
+</html>
