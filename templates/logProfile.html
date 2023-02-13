@@ -17,7 +17,7 @@
 </head>
 
 
-<body style="background-image: url(/Components/blackmaskdubai.jpeg);">
+<body style="background-image: url(/images/blackmaskdubai.jpeg); width:100%;">
  
     
     <ul>
@@ -32,7 +32,7 @@
       <!--form-->
       <form action="#" method="post"  name="form" >      
         <div class="card" style="background-color:white" id="myForm1">
-        <img src="./Components/profile.jpeg" alt="Avatar" style="width: 100px;height:100px;border-radius: 50%;">
+        <img src="/images/profile.jpeg" alt="Avatar" style="width: 100px;height:100px;border-radius: 50%;position: center;">
         <div class="container">
           <h4><b>My Details</b></h4>
           <div class="info">
@@ -48,7 +48,7 @@
 
           </div>
             <div class="input-group">
-            <input type="text" name="Phone" id="Phone" required placeholder="Phone number" onkeyup="validatePhone">
+            <input type="text" name="Phone" id="Phone" required placeholder="Phone number" onkeyup="validatePhone()">
             <span id="phone-error"></span>
 
           </div>
@@ -63,8 +63,8 @@
 
             <input type="password" name="password" required placeholder="Password" id="Password">
             <!--address-->
-            <label style="text-align: left;">Address</label>
-            <textarea placeholder='Address'> </textarea>
+            <label style="text-align: left;" >Address</label>
+            <textarea placeholder='Address' id="Address"> </textarea>
             <!--dropdown-->
             <select>
               <option value="visit-type" selected>What are you looking for?</option>
@@ -96,6 +96,7 @@
           e.preventDefault();
           e.returnValue='';
         });
+        //for form
 
         const form = document.getElementById('myForm1');
         form.addEventListener('mouseover',function handlemouseover()
@@ -106,6 +107,16 @@
         form.addEventListener('mouseout',function handlemouseout(){
           form.style.backgroundColor='white'
         })
+        //for Address
+        const Address = document.getElementById('Address');
+        form.addEventListener('mouseover',function handlemouseover()
+        {
+          form.style.backgroundColor='#9582c5'
+        });
+
+        form.addEventListener('mouseout',function handlemouseout(){
+         // form.style.backgroundColor='white'
+        })
 
 
 
@@ -115,15 +126,19 @@
         const emailErr=document.getElementById('email-error');
         const phoneErr=document.getElementById('phone-error');
         const submitErr= document.getElementById('submit-error');
-        function validateName(e)
+        function validateName()
         {
-          e.preventDefault();
-          const name1 = document.getElementById("Name");
+        
+          const name1 = document.getElementById("Name").value;
           let valid = true;
 
-      if (!name1.value) {
-        const err = document.getElementById("Name");
+      if (name1.length==0) {
+        nameErr.innerHTML='Name is required';
+        return false;
       }
+
+      nameErr.innerHTML='';
+      return true;
     }
 
         function validatePhone(){
@@ -133,7 +148,7 @@
             phoneErr.innerHTML ='Phone number required';
             return false;
           }
-          if(phone.length!=0)
+          if(phone.length!=10)
           {
             phoneErr.innerHTML='Phone number should have 10 digits';
             return false;
@@ -156,10 +171,10 @@
           }
           if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
           {
-            emailError.innerHTML='Email Invalid';
+            emailErr.innerHTML='Email is Invalid';
             return false;
          }
-        emailError.innerHTML='';
+        emailErr.innerHTML='';
         return true;
         }
 
