@@ -10,13 +10,12 @@ function phonenumber(inputtxt) {
   }
 }
 
-
 document.getElementById("date1").addEventListener("change", function () {
   var date = this.value;
   var enteredDate = new Date(date);
   console.log(enteredDate);
   var startDate = new Date("1992-01-01");
-  var endDate = new Date("2002-03-04");
+  var endDate = new Date("2022-03-04");
   if (enteredDate < startDate || enteredDate > endDate) {
     alert("Enter valid Date");
     this.value = "";

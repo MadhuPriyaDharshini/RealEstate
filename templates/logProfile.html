@@ -60,7 +60,7 @@
 
             <input type="password" name="password" required placeholder="Password" id="Password">
             <!--address-->
-            <label style="text-align: left;" >Address</label>
+            <label style="text-align: left;">Address</label>
             <textarea placeholder='Address' id="Address"> </textarea>
             <!--dropdown-->
             <select>
@@ -118,17 +118,16 @@
 
 
 
-        /*const submit = document.getElementById("submit");
-        submit.addEventListener("click",validateForm());*/
-        const nameErr=document.getElementById('name-error');
-        const emailErr=document.getElementById('email-error');
-        const phoneErr=document.getElementById('phone-error');
-        const submitErr= document.getElementById('submit-error');
-        function validateName()
-        {
-        
-          const name1 = document.getElementById("Name").value;
-          let valid = true;
+    /*const submit = document.getElementById("submit");
+    submit.addEventListener("click",validateForm());*/
+    const nameErr = document.getElementById('name-error');
+    const emailErr = document.getElementById('email-error');
+    const phoneErr = document.getElementById('phone-error');
+    const submitErr = document.getElementById('submit-error');
+    function validateName() {
+
+      const name1 = document.getElementById("Name").value;
+      let valid = true;
 
       if (name1.length==0) {
         nameErr.innerHTML='Name is required';
