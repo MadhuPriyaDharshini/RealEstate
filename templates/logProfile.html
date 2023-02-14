@@ -4,15 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>My Profile</title>
-  <link rel="stylesheet" href="/templates/logProfile.css">
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-  <link rel="icon" href="/images/android-chrome-512x512.png" type="image/icon type">
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="logprofile.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="android-chrome-512x512.png" type="image/icon type">
-  <script src="/templates/logProfile.js">
-
-  </script>
+  <script src="logProfile.js"></script>
 
 </head>
 
@@ -36,23 +31,19 @@
           <h4><b>My Details</b></h4>
           <div class="info">
             <!--Details-->
-            <div class="input-group">
-              <input class="fname" type="text" name="Name" id="Name" placeholder="Full name" onkeyup="validateName()"
-                required>
-              <span id="name-error"></span>
 
-            </div>
-            <div class="input-group">
-              <input type="email" name="Email" id="Email" required placeholder="Email" onkeyup="validateEmail()">
-              <span id="email-error"></span>
+            <input class="fname" type="text" name="Name" id="Name" placeholder="Full name" onkeyup="validateName()"
+              required>
+            <span id="name-error"></span>
 
-            </div>
-            <div class="input-group">
-              <input type="text" name="Phone" id="Phone" required placeholder="Phone number" onkeyup="validatePhone()">
-              <span id="phone-error"></span>
+            <input type="email" name="Email" id="Email" required placeholder="Email" onkeyup="validateEmail()">
+            <span id="email-error"></span>
 
-            </div>
-            <input type="date" name="DOB" required placeholder="Date of Birth" id="dateText">
+
+            <input type="text" name="Phone" id="Phone" required placeholder="Phone number" onkeyup="validatePhone()">
+            <span id="phone-error"></span>
+
+            <input type="date" name="DOB" required placeholder="Date of Birth" id="date1">
             <!--Checkbox-->
             <div class="radio">
               <label>Gender</label>
@@ -95,7 +86,20 @@
       e.returnValue = '';
     });
 
+    function phonenumber(inputtxt) {
+      console.log(inputDate);
+      var phoneno = /^\d{10}$/;
+
+      if (inputtxt.value.match(phoneno)) {
+        return true;
+      } else {
+        alert("Not a valid Phone Number");
+        return false;
+      }
+    }
+
     const form = document.getElementById('formElement');
+
     form.addEventListener('mouseover', function handlemouseover() {
       form.style.backgroundColor = '#9582c5'
     });
@@ -112,6 +116,30 @@
     form.addEventListener('mouseout', function handlemouseout() {
       // form.style.backgroundColor='white'
     })
+
+    form.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        submit.click();
+      }
+    });
+
+    function validateForm() {
+      alert("Submitted Successfully");
+    }
+
+
+
+    document.getElementById("date1").addEventListener("change", function () {
+      var date = this.value;
+      var enteredDate = new Date(date);
+      console.log(enteredDate);
+      var startDate = new Date("1992-01-01");
+      var endDate = new Date("2022-03-04");
+      if (enteredDate < startDate || enteredDate > endDate) {
+        alert("Enter valid Date");
+        this.value = "";
+      }
+    });
 
 
 
