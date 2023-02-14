@@ -13,6 +13,27 @@ ul {
   overflow: auto;
 }
 
+#name-error{
+  text-align: left;
+  color:red;
+}
+
+#email-error{
+  text-align: left;
+  color:red;
+
+}
+
+#password-error{
+  text-align: left;
+  color:red;
+
+}
+
+#phone-error{
+  text-align: left;
+  color:red;
+}
 li a {
   display: block;
   color: white;

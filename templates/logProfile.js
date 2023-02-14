@@ -10,6 +10,7 @@ function phonenumber(inputtxt) {
   }
 }
 
+
 document.getElementById("date1").addEventListener("change", function () {
   var date = this.value;
   var enteredDate = new Date(date);
@@ -32,6 +33,4 @@ form1.addEventListener("keydown", function (event) {
   }
 });
 
-function validateForm() {
-  alert("Submitted Successfully");
-}
+
