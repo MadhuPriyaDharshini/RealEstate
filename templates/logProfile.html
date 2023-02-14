@@ -18,7 +18,7 @@
 <body style="background-image: url(/images/blackmaskdubai.jpeg); width:100%;">
 
 
-  <ul>
+  <ul id="navbar">
     <li><a class="active" href="/templates/index.html">Home</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -191,10 +191,20 @@
         emailErr.innerHTML = "*Email is required";
         return false;
       }
-      
+
       emailErr.innerHTML = "";
       return true;
     }
+
+    const navbar = document.getElementById('navbar')
+
+    window.addEventListener("resize", function (e) {
+      if (this.window.innerWidth <= 800) {
+        navbar.style.display = "none"
+      } else {
+        navbar.style.display = "block"
+      }
+    });
 
   </script>
 </body>
