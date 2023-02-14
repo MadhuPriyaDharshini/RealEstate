@@ -58,20 +58,14 @@
       }
     });
 
+document.getElementById("password").addEventListener("input", function () {});
+const form1 = document.getElementById("formElement");
+const submit = document.getElementById("submitButton");
+
+form1.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    submit.click();
+  }
+});
 
 
-    /*const submit = document.getElementById("submit");
-    submit.addEventListener("click",validateForm());*/
-    const nameErr = document.getElementById('name-error');
-    const emailErr = document.getElementById('email-error');
-    const phoneErr = document.getElementById('phone-error');
-    const submitErr = document.getElementById('submit-error');
-    function validateName() {
-
-      const name1 = document.getElementById("Name").value;
-      let valid = true;
-
-      if (!name1.value) {
-        const err = document.getEle
-      }
-    }
