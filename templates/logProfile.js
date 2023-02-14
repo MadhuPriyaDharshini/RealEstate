@@ -10,7 +10,7 @@ function phonenumber(inputtxt) {
   }
 }
 
-const validDate = document.getElementById("dateElement")
+const validDate = document.getElementById("dateElement").value;
 
 console.log(validDate)
 
