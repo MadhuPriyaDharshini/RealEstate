@@ -23,10 +23,10 @@ document.getElementById("date1").addEventListener("change", function () {
 });
 
 document.getElementById("password").addEventListener("input", function () {});
-const form = document.getElementById("formElement");
+const form1 = document.getElementById("formElement");
 const submit = document.getElementById("submitButton");
 
-form.addEventListener("keydown", function (event) {
+form1.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     submit.click();
   }
