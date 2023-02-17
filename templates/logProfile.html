@@ -2,50 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset = "UTF-8">
-    <title>My Profile</title>
-    <link rel="stylesheet" href="/templates/logProfile.css">
-   
-    <link rel="icon" href="/images/android-chrome-512x512.png" type="image/icon type">  
-    
-    <script src="/templates/logProfile.js" >
-    
-    </script>
+  <meta charset="UTF-8">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="/templates/logProfile.css">
+
+  <link rel="icon" href="/images/android-chrome-512x512.png" type="image/icon type">
+
+  <script src="logProfile.js">
+
+  </script>
 
 </head>
 
 
 <body style="background-image: url(/images/blackmaskdubai.jpeg); width:100%;">
- 
-    
-    <ul>
-      <li><a class="active" href="/templates/index.html">Home</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-    <div style="margin-left:25%;padding:1px 16px;height:1000px;" >
-      <h2 style="text-align:center;color:white;">Complete your profile to get more personalized reccommendations</h2>
-  
-      <!--form-->
-      <form action="#" method="post"  name="form" >      
-        <div class="card" style="background-color:white" id="myForm1">
-        <img src="/images/profile.jpeg" alt="Avatar" style="width: 100px;height:100px;border-radius: 50%;position: center;">
+
+
+  <ul id="navbar">
+    <li><a class="active" href="/templates/index.html">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+    <h2 style="text-align:center;color:white;">Complete your profile to get more personalized reccommendations</h2>
+
+    <!--form-->
+    <form action="#" method="post" name="form" id="entireForm">
+      <div class="card" style="background-color:white" id="myForm1">
+        <img src="/images/profile.jpeg" alt="Avatar"
+          style="width: 100px;height:100px;border-radius: 50%;position: center;">
         <div class="container">
           <h4><b>My Details</b></h4>
           <div class="info">
             <!--Details-->
-            
-            <input class="fname" type="text" name="Name" id="Name" placeholder="Full name" onkeyup="validateName()" required>
+
+            <input class="fname" type="text" name="Name" id="Name" placeholder="Full name" onkeyup="validateName()"
+              required>
             <p id="name-error"></p>
 
-            
-       
+
+
             <input type="email" name="Email" id="Email" required placeholder="Email" onkeyup="validateEmail()">
             <p id="email-error"></p>
 
-        
-            
+
+
             <input type="text" name="Phone" id="Phone" required placeholder="Phone number" onkeyup="validatePhone()">
             <p id="phone-error"></p>
 
@@ -82,143 +84,129 @@
           <button id="submit" type="submit" href="#" onclick="validateForm()">Save Changes</button>
           <span id="submit-error"></span>
         </div>
-        </div>
-        </form>
       </div>
-    
-      <script type="text/javascript" >
-        
-        window.addEventListener('beforeunload',function(e)
-        {
-          e.preventDefault();
-          e.returnValue='';
-        });
+    </form>
+  </div>
+  <script>
+    const submit = document.getElementById('submit');
 
-        
+    const entireForm = document.getElementById('entireForm');
 
-        const form = document.getElementById('myForm1');
-        form.addEventListener('mouseover',function handlemouseover()
-        {
-          form.style.backgroundColor='rgb(189, 209, 238)'
-        });
+    entireForm.addEventListener("keydown", function (event) {
+      if (event.key === 'Enter') {
+        submit.click();
+      }
+    });
 
-        form.addEventListener('mouseout',function handlemouseout(){
-          form.style.backgroundColor='white'
-        })
-        //for Address
-        const Address = document.getElementById('Address');
-        Address.addEventListener('mouseover',function handlemouseover()
-        {
-          Address.style.backgroundColor='rgb(235, 198, 235)'
-        });
+    function validateForm() {
+      const a = true;
+      const username = document.getElementById("Name").value;
+      const password = document.getElementById("Password").value;
+      if (!validateEmail() || !validateName() || !validatePhone()) {
+        submitErr.style.display = "block";
+        setTimeout(function () {
+          submitErr.style.display = "none";
+        }, 3000);
+        submitErr.innerHTML = "Please Fill the form";
+        a = false;
+        alert("Invalid username or password");
+      } else if (username == "realestate" && password == "password") {
+        window.open("index.html");
+      }
 
-        Address.addEventListener('mouseout',function handlemouseout(){
-        Address.style.backgroundColor='white'
-        })
+      alert("Submitted Successfully");
+    }
 
+    const form = document.getElementById('myForm1');
 
+    form.addEventListener("mouseover", function handlemouseover() {
+      form.style.backgroundColor = "rgb(189, 209, 238)";
+    });
 
-    /*const submit = document.getElementById("submit");
-    submit.addEventListener("click",validateForm());*/
-    const nameErr = document.getElementById('name-error');
-    const emailErr = document.getElementById('email-error');
-    const phoneErr = document.getElementById('phone-error');
-    const submitErr = document.getElementById('submit-error');
+    form.addEventListener("mouseout", function handlemouseout() {
+      form.style.backgroundColor = "white";
+    });
+
+    const Address = document.getElementById("Address");
+
+    Address.addEventListener("mouseover", function handlemouseover() {
+      Address.style.backgroundColor = "rgb(235, 198, 235)";
+    });
+
+    Address.addEventListener("mouseout", function handlemouseout() {
+      Address.style.backgroundColor = "white";
+    });
+
+    document.getElementById("date1").addEventListener("change", function () {
+      var date = this.value;
+      var enteredDate = new Date(date);
+      console.log(enteredDate);
+      var startDate = new Date("1992-01-01");
+      var endDate = new Date("2022-03-04");
+      if (enteredDate < startDate || enteredDate > endDate) {
+        alert("Enter valid Date");
+        this.value = "";
+      }
+    });
+
+    const nameErr = document.getElementById("name-error");
+    const emailErr = document.getElementById("email-error");
+    const phoneErr = document.getElementById("phone-error");
+    const submitErr = document.getElementById("submit-error");
+
     function validateName() {
-
       const name1 = document.getElementById("Name").value;
       let valid = true;
 
-      if (name1.length==0) {
-        nameErr.innerHTML='Name is required';
+      if (name1.length == 0) {
+        nameErr.innerHTML = "*Name is required";
         return false;
       }
 
-      nameErr.innerHTML='';
+      nameErr.innerHTML = "";
       return true;
     }
 
-        function validatePhone(){
-          const phone = document.getElementById('Phone').value;
-          if(phone.length==0)
-          {
-            phoneErr.innerHTML ='Phone number required';
-            return false;
-          }
-          if(phone.length!=10)
-          {
-            phoneErr.innerHTML='Phone number should have 10 digits';
-            return false;
-          }
-          if(!phone.match(/^[0-9]{10}$/))
-          {
-            phoneErr.innerHTML='Digits only allowed';
-            return false;
-          }
-          phoneErr.innerHTML='';
-          return true;
-        }
+    function validatePhone() {
+      const phone = document.getElementById("Phone").value;
+      if (phone.length == 0) {
+        phoneErr.innerHTML = "*Phone number required";
+        return false;
+      }
+      if (phone.length != 10) {
+        phoneErr.innerHTML = "*Phone number should have 10 digits";
+        return false;
+      }
+      if (!phone.match(/^[0-9]{10}$/)) {
+        phoneErr.innerHTML = "*Digits only allowed";
+        return false;
+      }
+      phoneErr.innerHTML = "";
+      return true;
+    }
 
-        function validateEmail(){
-          const email = document.getElementById('Email').value;
-          if(email.length==0)
-          {
-            emailErr.innerHTML='Email is required';
-            return false;
-          }
-          if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
-          {
-            emailErr.innerHTML='Type a valid Email';
-            return false;
-         }
-        emailErr.innerHTML='';
-        return true;
-        }
+    function validateEmail() {
+      const email = document.getElementById("Email").value;
+      if (email.length == 0) {
+        emailErr.innerHTML = "*Email is required";
+        return false;
+      }
 
-        function validateForm()
-        {
-          const a= true;
-          const username=document.getElementById('Name').value;
-          const password = document.getElementById('Password').value;
-          if(!validateEmail()||!validateName()||!validatePhone())
-          {
-            submitErr.style.display ='block';
-            setTimeout(function(){
-              submitErr.style.display='none';},3000);
-              submitErr.innerHTML='Please Fill the form';
-              a=false;
-              alert("Invalid username or password");
+      emailErr.innerHTML = "";
+      return true;
+    }
 
-            }
-            else if(username=="realestate"&&password=="password"){
-              window.open("index.html");
-            }
-          }
-        
+    const navbar = document.getElementById('navbar')
 
+    window.addEventListener("resize", function (e) {
+      if (this.window.innerWidth <= 800) {
+        navbar.style.display = "none"
+      } else {
+        navbar.style.display = "block"
+      }
+    });
 
   </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
