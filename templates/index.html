@@ -6,11 +6,78 @@
     <meta name="description" content="">
   
     <title>Real Estate Traders</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c62d038df6.js" crossorigin="anonymous"></script>
+    <script src="/templates/carousal.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-    <link rel="icon" href="/images/android-chrome-512x512.png" type="image/icon type">  
+    <link rel="icon" href="/images/Real.png" type="image/icon type">  
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script>
+      $(document).ready(function()
+      {
+        //get the bg color of the element
+        $('body,html').click(function(){
+            let colore= $(this).css("background-color");
+            $(".colors").html("The background colour of our Webpage is "+colore)
+        });
+        //Find all  the elements that children of a div element and apply a bg to them
+        $('footer#footer').children('div.mjq').css({
+        "background-color":"rgb(69, 68, 68)"
+        
+             });
+
+        //toggling bg colors
+        //double click to see the color change
+        let bg= true;
+        let box = $('body,html');
+        box.dblclick(function(){
+          if(bg)
+          {
+            box.removeClass("lbg");
+            box.addClass("gbg");
+          }
+          else{
+            box.removeClass("gbg");
+            box.addClass("lbg");
+          }
+          bg = !bg;
+          return false;
+
+        });
+
+        //1st box
+        $('div.row').children('div#highlight').children('p').mouseenter(function(){
+          $('div.row').children('div#highlight').children('p').addClass("adder");
+        });
+        $('div.row').children('div#highlight').children('p').mouseleave(function(){
+          $('div.row').children('div#highlight').children('p').removeClass("adder");
+        });
+
+        //2nd box
+        $('div.row').children('div#highlight1').children('p').mouseenter(function(){
+          $('div.row').children('div#highlight1').children('p').addClass("adder");
+        });
+        $('div.row').children('div#highlight1').children('p').mouseleave(function(){
+          $('div.row').children('div#highlight1').children('p').removeClass("adder");
+        });
+
+        //3rd box
+        
+        //2nd box
+        $('div.row').children('div#highlight2').children('p').mouseenter(function(){
+          $('div.row').children('div#highlight2').children('p').addClass("adder");
+        });
+        $('div.row').children('div#highlight2').children('p').mouseleave(function(){
+          $('div.row').children('div#highlight2').children('p').removeClass("adder");
+        });
+       
+      });
+     
+
+     
+    </script>
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -31,13 +98,13 @@
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
   </head>
-  <body style ="background-color:lavender">
+  <body style ="background-color:lavender" class="lbg">
     
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="background-color: aliceblue; border-radius: 50%;">
-        <img src="/images/android-chrome-512x512.png" alt="Logo" style="width:40px;" class="rounded-pill">
+      <a class="navbar-brand" href="#" >
+        <img src="/images/Real.png" alt="Logo" style="width:40px;" >
       </a>
       <a class="navbar-brand" href="#"><h2>Real Estate</h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,8 +131,10 @@
             <a class="nav-link active " href="/templates/logProfile.html">Profile</a>
           </li>
         </ul>
+        
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search your desired Villas" aria-label="Search">
+          <i class="fa-solid fa-location-crosshairs" id="location" style="font-size:1.5rem;color:aliceblue;padding:0.375rem 0.75rem;line-height: 1.5;" onclick="getLocation()"></i>
+          <input class="form-control me-2" id="search" type="search" placeholder="Search your desired Villas" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
@@ -136,27 +205,28 @@
    
     <div class="row">
       <div class="col-lg-4" id="highlight">
+        
         <img src = "/images/beach_Edit.jpg" class ="bd-placeholder-img rounded-circle" alt="...">
        <!---<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
 
-        <h2>Villas near Beach</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+        <h2 >Villas near Beach</h2>
+        <p >Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
         <p><a class="btn btn-secondary" href="#Beach" style="background-color:blueviolet;">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4" id="highlight1">
         <img src = "/images/Swim_edit.jpg" class ="bd-placeholder-img rounded-circle" alt="...">
         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
 
-        <h2>House with pool</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+        <h2 >House with pool</h2>
+        <p >Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
         <p><a class="btn btn-secondary" href="#Swim" style="background-color:blueviolet;">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4" id="highlight2">
         <img src = "/images/home garden.jpg" class ="bd-placeholder-img rounded-circle" width="140" height="140" alt="...">
         <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
 
-        <h2>City View House</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
+        <h2 >City View House</h2>
+        <p >And lastly this, the third column of representative placeholder content.</p>
         <p><a class="btn btn-secondary" href="#Garden" style="background-color:blueviolet;">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
@@ -338,37 +408,50 @@
 
     
     
-
+<p class="colors"></p>
     
 
   </div><!-- /.container -->
 
-
+</main>
   <!-- FOOTER -->
+</body>
   
     
     <p><a href="#top" class="linke"></a></p>
     <footer id="footer" class="item5" >
+      <div class="row featurette" id="fq1">
+
+     
    
-      <ul >
-        <h3>Conatact:</h3>
-        <li class="foot" >jayashreeg@student.tce.edu</li>
-        <li class="foot" >madhupriya@student.tce.edu</li>
-        <li class="foot" >lokeshd@student.tce.edu</li>
-      </ul>
-      <p>&copy; 2017–2021 Company, Inc</p>
-        <p> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      
+      <div class="col-md-7 order-md-2" id="foot-content">
+        <h2 class="featurette-heading">Contact:<span class="text-muted"></span></h2>
+        <h4>jayashreeg@student.tce.edu</h4>
+        <h4>madhupriya@student.tce.edu</h4>
+        <h4>lokeshd@student.tce.edu</h4>
+      </div>
+     
+    
+    <div id="jq2" class="col-md-5 order-md-1" style="align-items: center;">
+      <img src="/images/Real.png" style="width:250px;height:250px;" class="foot-img">
+    </div>
+   
+    </div>
+    <div class="mjq">
+    <p class="jq">&copy; 2020–2024 Company, Inc</p>
+    <p class="jq"> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </div>
+        
     </footer>
     
  
-</main>
+
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 
-</body>
+
 <script>
    const form = document.getElementById('highlight');
         form.addEventListener('mouseover',function handlemouseover()
