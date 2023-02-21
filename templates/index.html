@@ -20,7 +20,8 @@
         //get the bg color of the element
         $('body,html').click(function(){
             let colore= $(this).css("background-color");
-            $(".colors").html("The background colour of our Webpage is "+colore)
+            console.log("The background colour of our webpage is "+colore);
+            // $(".colors").html("The background colour of our Webpage is "+colore)
         });
         //Find all  the elements that children of a div element and apply a bg to them
         $('footer#footer').children('div.mjq').css({
@@ -106,7 +107,7 @@
       <a class="navbar-brand" href="#" >
         <img src="/images/Real.png" alt="Logo" style="width:40px;" >
       </a>
-      <a class="navbar-brand" href="#"><h2>Real Estate</h2></a>
+      <a class="navbar-brand" href="#"><h2>Unbound Explora</h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -118,7 +119,7 @@
           <li class="nav-item">
             <a class="nav-link active " href="#About">About</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="price">
             <a class="nav-link active " href="#">Pricing</a>
           </li>
           <li class="nav-item">
@@ -405,10 +406,14 @@
 
       </div>
     </div>
+    <a href="#top" class="linke" name="link"><i class="fa-thin fa-up"></i></a>
+    
+    <i class="fa-thin fa-up" style="color:black;height:20px;width:20px;"></i>
 
     
     
 <p class="colors"></p>
+
     
 
   </div><!-- /.container -->
@@ -418,9 +423,7 @@
 </body>
   
     
-    <p><a href="#top" class="linke"></a></p>
     
-
     <footer class="footer-distributed">
 
 			<div class="footer-left">
