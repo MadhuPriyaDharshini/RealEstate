@@ -79,6 +79,20 @@
 
      
     </script>
+
+    <script>
+      function sendinfo()
+      {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload  = function()
+        {
+          document.getElementById("show").innerHTML = this.responseText;
+        }
+
+        xhttp.open("GET","/templates/WEB-INF/ajax.txt");
+        xhttp.send()
+      }
+    </script>
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -119,17 +133,12 @@
           <li class="nav-item">
             <a class="nav-link active " href="#About">About</a>
           </li>
-          <li class="nav-item" id="price">
-            <a class="nav-link active " href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Area</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link active " href="/templates/login.html">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active " href="/templates/logProfile.html">Profile</a>
+            <a class="nav-link active " href="/templates/logProfile.html"></a>
           </li>
         </ul>
         
@@ -173,8 +182,8 @@
         <div class="container">
           <div class="carousel-caption">
             <h1>Life's Greatest Investement</h1>
-            <p>Refers to the idea that owning a home is one of the most important financial investments you can make.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <p id="show"></p>
+            <p><a class="btn btn-lg btn-primary" href="#" id="learn" onclick="sendinfo()">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -204,7 +213,7 @@
 
  
   <div class="container marketing">
-madhu
+
    
     <div class="row">
       <div class="col-lg-4" id="highlight">
@@ -474,7 +483,7 @@ madhu
 					<i class="fa fa-envelope"></i>
 					<p><a href="mailto:support@company.com">unboundexplora@company.com</a></p>
 				</div>
-        <img src="/images/Real.png" style="width:350px;height:150px;"/>
+        <!--<img src="/images/Real.png" style="width:350px;height:150px;"/>-->
 
 			</div>
 

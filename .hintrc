@@ -38,6 +38,12 @@
         "label": "off",
         "select-name": "off"
       }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-aria": "off"
+      }
     ]
   }
 }

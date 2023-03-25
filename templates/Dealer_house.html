@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/vendor/nouislider/nouislider.min.css">
+    <script src="https://kit.fontawesome.com/c62d038df6.js" crossorigin="anonymous"></script>
+    <script src="/templates/carousal.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="icon" href="/images/Real.png" type="image/icon type">  
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="Dealer_plot.css">
+</head>
+<body style="background-image: linear-gradient(to right top, #c6a0f6, #bf9bf3, #b796f0, #b091ee, #a88ceb, #aa8eec, #ad90ec, #af92ed, #bc9bf1, #c8a5f6, #d4affa, #dfb9ff);">
+
+    <div class="main">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" >
+                <img src="/images/Real.png" alt="Logo" style="width:40px;" >
+              </a>
+              <a class="navbar-brand" href="#"><h2>Unbound Explora</h2></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/templates/index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active " href="#About">About</a>
+                  </li>
+                  
+                  
+                  <li class="nav-item">
+                    <a class="nav-link active " href="/templates/login.html">Sign In</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active " href="/templates/logProfile.html">Dealer's SignIn</a>
+                  </li>
+                </ul>
+                
+               
+              </div>
+            </div>
+          </nav>
+        <div class="container" style ="background-color:lavender">
+            <div class="signup-content">
+                <div class="signup-img" style=" margin-left: -10px;">
+                    <img src="/images/residential_plot-for-sale-sonnanaikanahalli-Bangalore-plot_view.webp" alt="" style="width:510px;height:900px;margin-left: 0px;opacity:0.4;">
+                    <div class="signup-img-content">
+                        <h2 style="color: black;">Register </h2>
+                        <p style="color: black;"> Your Plots here</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" >
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">Country</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">State</label>
+                                    <input type="text" name="last_name" id="last_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Area</label>
+                                    <input type="text" name="company" id="company" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Address</label>
+                                    <input type="text Area" name="company" id="company" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Postal" class="required">Postal code</label>
+                                    <input type="number" name="Postal" id="Postal" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="tel" name="phone_number" id="phone_number" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Approximated Price</label>
+                                    <input type="tel" name="phone_number" id="phone_number" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!--<div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="meal_preference">meal preference</label>
+                                        <a href="#" class="form-link">Lunch detail</a>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="meal_preference" id="meal_preference" class="meal ">
+                                            <option  >Select the country</option>
+                                            <option value="AF">Afghanistan</option>
+                                                    <option value="AX" >Aland Islands</option>
+                                                    <option value="AL">Albania</option>
+                                                   
+                                        </select>
+                                    </div>
+                                </div>-->
+                                <div class="form-input">
+                                    <label for="file" class="required" multiple>Picture of the House</label>
+                                    <input type="file" name="phone_number" id="phone_number" multiple />
+
+                                </div>
+                                    
+                                <div class="form-input">
+                                    <label for="Pricing">Pricing per Sqaure meter</label>
+                                    <input type="text" name="chequeno" id="chequeno" />
+                                </div>   
+                                            
+                               
+<!--
+                                <div class="form-radio">
+                                    <div class="label-flex">
+                                        <label for="payment">Payment Mode</label>
+                                        <a href="#" class="form-link">Payment Detail</a>
+                                    </div>
+                                    <div class="form-radio-group">            
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="cash" checked>
+                                            <label for="cash">Cash</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="cheque">
+                                            <label for="cheque">Cheque</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="demand">
+                                            <label for="demand">Demand Draf</label>
+                                            <span class="check"></span>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="form-input">
+                                    <label for="chequeno">Total No. of Sqaure meter</label>
+                                    <input type="text" name="chequeno" id="chequeno" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="blank_name">Number of Cents</label>
+                                    <input type="text" name="blank_name" id="blank_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="payable">Price per cent</label>
+                                    <input type="text" name="payable" id="payable" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="payable">Number of Rooms</label>
+                                    <input type="text" name="payable" id="payable" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="payable">BHK</label>
+                                    <input type="text" name="payable" id="payable" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="donate-us">
+                            <label>Total Approximated Price</label>
+                            <div class="price_slider ui-slider ui-slider-horizontal">
+                                <div id="slider-margin"></div>
+                                <span class="donate-value" id="value-lower"></span>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/nouislider/nouislider.min.js"></script>
+    <script src="/vendor/wnumb/wNumb.js"></script>
+    <script src="/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="Dealer_plot.js"></script>
+</body>
+</html>
