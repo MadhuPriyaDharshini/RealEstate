@@ -94,21 +94,21 @@
 <div class="container right-panel-active">
 	<!-- Sign Up -->
 	<div class="container__form container--signup">
-		<form name="myForm1" action="#" class="form" id="form1" onsubmit="return validateForm1()">
+		<form name="myForm1" class="form" id="form1" onsubmit="return validateForm1()">
 			<h2 class="form__title">Sign Up</h2>
-			<input type="text" name="uname" placeholder="User" class="input" />
-			<input type="email" name="ename1" placeholder="Email" class="input" />
-			<input type="password" name="pname1" placeholder="Password" class="input" />
+			<input type="text" name="UserName" placeholder="User" class="input" id="User"/>
+			<input type="email" name="Email" placeholder="Email" class="input" id="Email" />
+			<input type="password" name="Password" placeholder="Password" class="input" id="Password" />
 			<button class="btn" type="submit">Sign Up</button>
 		</form>
 	</div>
 
 	<!-- Sign In -->
 	<div class="container__form container--signin">
-		<form name="myForm" action="#" class="form" id="form2" onsubmit="return validateForm()">
+		<form name="myForm"  class="form" id="form2" onsubmit="return validateForm()">
 			<h2 class="form__title">Sign In</h2>
-			<input type="email" name="ename" placeholder="Email" class="input" />
-			<input type="password" name="pname" placeholder="Password" class="input" />
+			<input type="email" name="Email" placeholder="Email" class="input" id="Email1"/>
+			<input type="password" name="Password" placeholder="Password" class="input" id="Password1" />
 			<a href="#" class="link">Forgot your password?</a>
 			<input class="btn" type="submit" value="SIGN IN">
 		</form>
@@ -126,6 +126,7 @@
 		</div>
 	</div>
 </div>
+<script src = './login.js'></script>
 <script>
 
     const signInBtn = document.getElementById("signIn");
@@ -146,8 +147,8 @@
     secondForm.addEventListener("submit", (e) => e.preventDefault());
     
     function validateForm() {
-  let x = document.forms["myForm"]["ename"].value;
-  let y = document.forms["myForm"]["pname"].value;
+  let x = document.forms["myForm"]["Email"].value;
+  let y = document.forms["myForm"]["Password"].value;
   
   if (x == "") {
     alert("Email must be filled out");
@@ -160,9 +161,9 @@
 }
 
 function validateForm1() {
-  let a = document.forms["myForm1"]["uname"].value;
-  let b = document.forms["myForm1"]["pname1"].value;
-  let c = document.forms["myForm1"]["ename1"].value;
+  let a = document.forms["myForm1"]["UserName"].value;
+  let b = document.forms["myForm1"]["Email"].value;
+  let c = document.forms["myForm1"]["Password"].value;
   
   if (a == "") {
     alert("Name must be filled out");
