@@ -5,6 +5,14 @@
     <title> Signup/Signin</title>
     <link rel="icon" href="/images/android-chrome-512x512.png" type="image/icon type">  
     <link rel="stylesheet" href="login.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c62d038df6.js" crossorigin="anonymous"></script>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="icon" href="/images/Real.png" type="image/icon type">  
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
 
@@ -42,9 +50,46 @@
           <input class="form-control me-2" type="search" placeholder="Search your desired Villas" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>-->
-      </div>
-    </div>
-  </nav>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#" >
+              <img src="/images/Real.png" alt="Logo" style="width:40px;" >
+            </a>
+            <a class="navbar-brand" href="#"><h2>Unbound Explora</h2></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/templates/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active " href="#About">About</a>
+                </li>
+                <li class="nav-item" id="price">
+                  <a class="nav-link active " href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Area</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active " href="/templates/login.html">Sign In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active " href="/templates/logProfile.html">Profile</a>
+                </li>
+              </ul>
+              
+              <form class="d-flex">
+                <i class="fa-solid fa-location-crosshairs" id="location" style="font-size:1.5rem;color:aliceblue;padding:0.375rem 0.75rem;line-height: 1.5;" onclick="getLocation()"></i>
+                <input class="form-control me-2" id="search" type="search" placeholder="Search your desired Villas" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
     
 <div class="container right-panel-active">
 	<!-- Sign Up -->

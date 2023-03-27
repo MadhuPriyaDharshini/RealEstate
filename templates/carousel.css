@@ -57,7 +57,38 @@
   text-decoration: none;
   font-size: 18px;
 }
+.autocomplete {
+ 
+  position: relative;
+  display: inline-block;
+}
 
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
 .adder{
   font-size:22px;
   font-weight:normal;
@@ -156,11 +187,11 @@ h1 {
   bottom: 0;
   z-index: 1;
   opacity: 0;
-  transform: translate(0px, 70px);
+  -ms-transform: translate(0px, 70px);
   -webkit-transform: translate(0px, 70px);
   -moz-transform: translate(0px, 70px);
   -o-transform: translate(0px, 70px);
-  -ms-transform: translate(0px, 70px);
+  transform: translate(0px, 70px);
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -190,19 +221,19 @@ h1 {
 }
 
 .container_foto:hover article {
-  transform: translate(2px, -69px);
+  -ms-transform: translate(2px, -69px);
   -webkit-transform: translate(2px, -69px);
   -moz-transform: translate(2px, -69px);
   -o-transform: translate(2px, -69px);
-  -ms-transform: translate(2px, -69px);
+  transform: translate(2px, -69px);
 }
 
 .container_foto:hover .ver_mas {
-  transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
   -webkit-transform: translate(0px, 0px);
   -moz-transform: translate(0px, 0px);
   -o-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
   opacity: 1;
 }
 
