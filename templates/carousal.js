@@ -16,6 +16,7 @@ const price = document.getElementById("price");
 function onSuccess(position){
   console.log("Detecting your location...");
   let {latitude,longitude} = position.coords;
+  console.log(latitude,longitude);
   /*ch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=YOUR_API_KEY`)
     .then(response => response.json()).then(response =>{*/
 
